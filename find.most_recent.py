@@ -41,7 +41,6 @@ INFILE = sys.argv[1]
 input_file = open(INFILE, 'r')
 
 most_recent = datetime.date.min
-print("init:",most_recent)
 
 for line in input_file:
     f_type, perms, owner, group, t_access, t_meta, t_data, file_path = line.split('|')
@@ -54,6 +53,7 @@ for line in input_file:
 
     if data_obj > most_recent:
         most_recent = data_obj
-        print("Updated most recent:", data_obj)
+        if DEBUG:
+            print("Updated most recent:", data_obj)
 
 print("Most recent =", most_recent)
