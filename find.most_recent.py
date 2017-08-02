@@ -19,11 +19,11 @@ def print_usage(command):
         print("Usage:", command, "<find_output_file>")
         print("")
         print("      ", "find . -printf '%y|%m|%u|%g|%AY-%Am-%Ad %AH:%AM|%CY-%Cm-%Cd %CH:%CM|%TY-%Tm-%Td %TH:%TM|%p'")
+
 # CODE
 
 # Grab script name for error messages and number of args
 script_name = sys.argv[0]
-
 
 # Check for the required number of arguments
 num_args = len(sys.argv) - 1
@@ -49,11 +49,14 @@ for line in input_file:
     #split timestamps into date and time because we don't care about time granularity
     data_date, data_time = t_data.split(" ")
 
+    #remove newline
     full_path = file_path.rstrip()
 
     if data_obj > most_recent:
         most_recent = data_obj
+        most_recent_path = full_path
         if DEBUG:
             print("Updated most recent:", data_obj)
 
 print("Most recent =", most_recent)
+print("Most recent path =", most_recent_path)
