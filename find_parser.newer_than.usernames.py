@@ -55,6 +55,7 @@ for line in input_file:
 	if data_obj > DATE_OBJ:
 		#print(t_data, " ".join(file_path).rstrip())
 		#print only files, because changed dirs without changed files are not interesting
-		if f_type == "f":
+		#if f_type == "f":
 			#leaving spaces in group names b/c we a using fixed width columns in Excel, not seps
-			print(",".join([data_date, owner, group, " ".join(file_path).rstrip()]))
+			#print(",".join([data_date, owner, group, " ".join(file_path).rstrip()]))
+		print(",".join([data_date, owner, group, " ".join(file_path).rstrip()]))
