@@ -55,8 +55,12 @@ for line in input_file:
     if data_obj > most_recent:
         most_recent = data_obj
         most_recent_path = full_path
+        most_recent_line = line
         if DEBUG:
             print("Updated most recent:", data_obj)
 
-print("Most recent =", most_recent)
-print("Most recent path =", most_recent_path)
+if DEBUG:
+    print("Most recent =", most_recent)
+    print("Most recent path =", most_recent_path)
+
+print(line)
