@@ -60,7 +60,9 @@ for line in input_file:
             print("Updated most recent:", data_obj)
 
 if DEBUG:
-    print("Most recent =", most_recent)
+    print("Most recent date =", most_recent)
     print("Most recent path =", most_recent_path)
+    print("Most recent line =", line)
 
-print(line)
+#print(",".join([most_recent_path, str(most_recent)]))
+print(",".join([str(most_recent)] + most_recent_path.split("/")))
